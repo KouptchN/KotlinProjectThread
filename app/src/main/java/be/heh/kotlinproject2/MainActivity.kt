@@ -17,6 +17,7 @@ class MainActivity : Activity() {
             bt_main_txtchange.id->bpModifTexte()
             bt_main_startTH.id->bpThreadGo()
             bt_main_startAS.id->bpAsyncTask(v)
+            bt_main_startAS.id -> bpThreadHandler(v)
         }
     }
     private fun bpModifTexte(){
@@ -41,5 +42,11 @@ class MainActivity : Activity() {
     private fun bpAsyncTask(v: View){
         val asyncrotask = AsyncroTask(v, bt_main_startAS, pb_main_progressionAS)
         asyncrotask.execute("paramètres --->", "<--- de traitement")
+    }
+    private fun bpThreadHandler(v : View) {
+        val bkgd1 = BackgroundTask(v, bt_main_startTrHa, pb_main_progressionTrHa1);
+        bkgd1.Start()
+        val bkgd2 = BackgroundTask(v, bt_main_startTrHa, pb_main_progressionTrHa2);
+        bkgd2.Start()
     }
 }
