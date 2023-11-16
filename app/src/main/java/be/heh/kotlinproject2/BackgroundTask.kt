@@ -58,7 +58,6 @@ public class BackgroundTask {
                 else -> {}
             }
         }
-
     }
     private var monThread = Thread(){
         try {
